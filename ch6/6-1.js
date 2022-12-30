@@ -1,14 +1,10 @@
 export function printOwing(invoice) {
 	printBanners();
-	let outstanding = calculateOutstanding(invoice);
 	recordDueDate(invoice);
+
+	let outstanding = calculateOutstanding(invoice);
 	printDetails(invoice, outstanding);
 }
-
-const invoice = {
-	orders: [{amount: 2}, {amount: 5}],
-	customer: "엘리",
-};
 
 function printBanners() {
 	console.log("***********************");
@@ -36,5 +32,10 @@ function printDetails(invoice, outstanding) {
 	console.log(`amount: ${outstanding}`);
 	console.log(`due: ${invoice.dueDate.toLocaleDateString()}`);
 }
+
+const invoice = {
+	orders: [{amount: 2}, {amount: 5}],
+	customer: "엘리",
+};
 
 printOwing(invoice);
