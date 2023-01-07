@@ -1,50 +1,58 @@
 class Person {
-  #name;
-  #department;
-  constructor(name, department) {
-    this.#name = name;
-    this.#department = department;
-  }
+	#name;
+	#department;
+	constructor(name, department) {
+		this.#name = name;
+		this.#department = department;
+	}
 
-  get name() {
-    return this.#name;
-  }
+	get name() {
+		return this.#name;
+	}
 
-  get department() {
-    return this.#department;
-  }
+	get department() {
+		return this.#department;
+	}
 
-  set department(arg) {
-    this.#department = arg;
-  }
+	set department(arg) {
+		this.#department = arg;
+	}
+
+	get manager() {
+		return this.#department.manager;
+	}
+
+	get chargeCode() {
+		return this.#department.chargeCode;
+	}
 }
 
 export class Department {
-  #manager;
-  #chargeCode;
-  constructor(manager, chargeCode) {
-    this.#manager = manager;
-    this.#chargeCode = chargeCode;
-  }
+	#manager;
+	#chargeCode;
+	constructor(manager, chargeCode) {
+		this.#manager = manager;
+		this.#chargeCode = chargeCode;
+	}
 
-  get chargeCode() {
-    return this.#chargeCode;
-  }
+	get chargeCode() {
+		return this.#chargeCode;
+	}
 
-  set chargeCode(arg) {
-    this.#chargeCode = arg;
-  }
+	set chargeCode(arg) {
+		this.#chargeCode = arg;
+	}
 
-  get manager() {
-    return this.#manager;
-  }
+	get manager() {
+		return this.#manager;
+	}
 
-  set manager(arg) {
-    this.#manager = arg;
-  }
+	set manager(arg) {
+		this.#manager = arg;
+	}
 }
 
-const person = new Person('Tom', new Department('aManager', '999'));
+const person = new Person("Tom", new Department("aManager", "999"));
 console.log(person.name);
-console.log(person.department.manager);
-console.log(person.department.chargeCode);
+console.log(person.manager);
+console.log(person.chargeCode);
